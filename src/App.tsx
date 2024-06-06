@@ -1,36 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Accordion} from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
+
+type PageTitleProps = {
+    title: string
+}
 
 function App() {
     return (
-        <div>App Component</div>
+        <div>
+            <PageTitle title={"App Page"}/>
+            <Rating value={2}/>
+            <Accordion title={"First"}/>
+            <Rating value={4}/>
+            <Accordion title={"Second"}/>
+        </div>
     );
 }
 
-const Rating = () => {
+const PageTitle = ({title}: PageTitleProps) => {
     return (
-        <div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-        </div>
+        <h1>{title}</h1>
     )
 }
 
-const Accordion = () => {
-    return (
-        <div>
-            <h3>Menu</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </div>
-    )
-}
+
 
 export default App;
