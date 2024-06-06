@@ -12,9 +12,8 @@ function App() {
         <div>
             <PageTitle title={"App Page"}/>
             <Rating value={2}/>
-            <Accordion title={"First"}/>
-            <Rating value={4}/>
-            <Accordion title={"Second"}/>
+            <Accordion title={"First Accordion"} collapsed={true}/>
+            <Accordion title={"Second Accordion"} collapsed={false}/>
         </div>
     );
 }
