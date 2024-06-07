@@ -1,19 +1,24 @@
-import React from "react";
+// @flow
+import * as React from 'react';
+import {useState} from "react";
 
 type AccordionProps = {
     title: string
-    collapsed: boolean
+    // collapsed: boolean
 }
 
 type AccordionTitleProps = {
     title: string
 }
 
-export const Accordion = ({title, collapsed}: AccordionProps) => {
+export const SelfControlledAccordion = ({title}: AccordionProps) => {
+    const [collapsed, setCollapsed] = useState(true)
+
     return (
         <div>
             <AccordionTitle title={title}/>
-            { !collapsed && <AccordionBody/> }
+            <button onClick={() => setCollapsed(!collapsed)}>{collapsed ? 'Свернуть' : 'Развернуть'}</button>
+            { collapsed && <AccordionBody/> }
         </div>
     )
 }
