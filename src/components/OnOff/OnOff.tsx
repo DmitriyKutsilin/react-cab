@@ -2,13 +2,15 @@
 import * as React from 'react';
 import {useState} from "react";
 
-type Props = {};
+type Props = {
+    status: boolean
+    setOnOffStatus: (value: boolean) => void
+};
 
-export const OnOff = ({}: Props) => {
-    const [status, setStatus] = useState(false)
+export const OnOff = ({status, setOnOffStatus}: Props) => {
 
     const changeStatus = (value: boolean) => {
-        setStatus(value)
+        setOnOffStatus(value)
     }
 
     const onStyle = {
@@ -16,12 +18,14 @@ export const OnOff = ({}: Props) => {
         height: '50px',
         border: '1px solid black',
         backgroundColor: status ? 'green' : 'white',
+        cursor: 'pointer',
     }
     const offStyle = {
         width: '50px',
         height: '50px',
         border: '1px solid black',
         backgroundColor: status ? 'white' : 'red',
+        cursor: 'pointer',
     }
     const indicatorStyle = {
         display: 'inline-block',
@@ -35,8 +39,8 @@ export const OnOff = ({}: Props) => {
 
     return (
         <div style={{boxSizing: 'border-box'}}>
-            <button onClick={() => setStatus(true)} style={onStyle}>On</button>
-            <button onClick={() => setStatus(false)} style={offStyle}>Off</button>
+            <button onClick={() => changeStatus(true)} style={onStyle}>On</button>
+            <button onClick={() => changeStatus(false)} style={offStyle}>Off</button>
             <div style={indicatorStyle}></div>
         </div>
     );

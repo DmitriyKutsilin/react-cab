@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
@@ -10,16 +10,21 @@ type PageTitleProps = {
     title: string
 }
 
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
+
 function App() {
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    const [collapsed, setCollapsed] = useState<boolean>(false)
+    const [onOffStatus, setOnOffStatus] = useState<boolean>(false)
+
     return (
-        <div>
+        <div className={'App'}>
             <PageTitle title={"App Page"}/>
-            <OnOff/>
-            <OnOff/>
+            <OnOff status={onOffStatus} setOnOffStatus={setOnOffStatus}/>
             <SelfControlledAccordion title={'Self-Controlled Accordion'}/>
-            <SelfControlledRating/>
-            {/*<Rating value={2}/>*/}
-            {/*<Accordion title={"First Accordion"} collapsed={true}/>*/}
+            {/*<SelfControlledRating value={3}/>*/}
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            {/*<Accordion title={"First Accordion"} collapsed={collapsed} onClick={setCollapsed}/>*/}
             {/*<Accordion title={"Second Accordion"} collapsed={false}/>*/}
         </div>
     );

@@ -4,11 +4,11 @@ import {useState} from "react";
 
 type AccordionProps = {
     title: string
-    // collapsed: boolean
 }
 
 type AccordionTitleProps = {
     title: string
+    onClick: () => void
 }
 
 export const SelfControlledAccordion = ({title}: AccordionProps) => {
@@ -16,16 +16,15 @@ export const SelfControlledAccordion = ({title}: AccordionProps) => {
 
     return (
         <div>
-            <AccordionTitle title={title}/>
-            <button onClick={() => setCollapsed(!collapsed)}>{collapsed ? 'Свернуть' : 'Развернуть'}</button>
-            { collapsed && <AccordionBody/> }
+            <AccordionTitle title={title} onClick={() => setCollapsed(!collapsed)}/>
+            { !collapsed && <AccordionBody/> }
         </div>
     )
 }
 
-const AccordionTitle = ({title}: AccordionTitleProps) => {
+const AccordionTitle = ({title, onClick}: AccordionTitleProps) => {
     return (
-        <h3>{title}</h3>
+        <h3 onClick={() => onClick()} style={{cursor: 'pointer'}}>{title}</h3>
     )
 }
 
