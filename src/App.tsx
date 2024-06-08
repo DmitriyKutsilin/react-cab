@@ -5,6 +5,7 @@ import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {SelfControlledAccordion} from "./components/SelfControlledAccordion/SelfControlledAccordion";
 import {SelfControlledRating} from "./components/SelfControlledRating/SelfControlledRating";
+import {SelfControlledOnOff} from "./components/SelfControlledOnOff/SelfControlledOnOff";
 
 type PageTitleProps = {
     title: string
@@ -20,12 +21,12 @@ function App() {
     return (
         <div className={'App'}>
             <PageTitle title={"App Page"}/>
+            {/*<SelfControlledOnOff/>*/}
             <OnOff status={onOffStatus} setOnOffStatus={setOnOffStatus}/>
-            <SelfControlledAccordion title={'Self-Controlled Accordion'}/>
+            {/*<SelfControlledAccordion title={'Self-Controlled Accordion'}/>*/}
             {/*<SelfControlledRating value={3}/>*/}
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            {/*<Accordion title={"First Accordion"} collapsed={collapsed} onClick={setCollapsed}/>*/}
-            {/*<Accordion title={"Second Accordion"} collapsed={false}/>*/}
+            <Accordion title={"First Accordion"} collapsed={collapsed} onClick={setCollapsed}/>
         </div>
     );
 }
