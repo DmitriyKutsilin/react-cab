@@ -3,7 +3,7 @@ import React from "react";
 type AccordionProps = {
     title: string
     collapsed: boolean
-    onClick: (value: boolean) => void
+    onChange: (value: boolean) => void
 }
 
 type AccordionTitleProps = {
@@ -11,10 +11,10 @@ type AccordionTitleProps = {
     onClick: () => void
 }
 
-export const Accordion = ({title, collapsed, onClick}: AccordionProps) => {
+export const Accordion = ({title, collapsed, onChange}: AccordionProps) => {
     return (
         <div>
-            <AccordionTitle title={title} onClick={() => onClick(!collapsed)}/>
+            <AccordionTitle title={title} onClick={() => onChange(!collapsed)}/>
             {!collapsed && <AccordionBody/>}
         </div>
     )

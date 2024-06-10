@@ -26,7 +26,7 @@ function App() {
             {/*<SelfControlledAccordion title={'Self-Controlled Accordion'}/>*/}
             {/*<SelfControlledRating value={3}/>*/}
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Accordion title={"First Accordion"} collapsed={collapsed} onClick={setCollapsed}/>
+            <Accordion title={"First Accordion"} collapsed={collapsed} onChange={setCollapsed}/>
         </div>
     );
 }
