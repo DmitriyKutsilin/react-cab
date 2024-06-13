@@ -2,11 +2,12 @@ import * as React from 'react';
 import {useState} from "react";
 
 type Props = {
-    // status: boolean
+    onChange?: (value: boolean) => void
+    defaultValue?: boolean
 };
 
-export const SelfControlledOnOff = ({}: Props) => {
-    const [on, setOn] = useState<boolean>(false)
+export const SelfControlledOnOff = ({onChange, defaultValue}: Props) => {
+    const [on, setOn] = useState<boolean>(defaultValue ? defaultValue : false)
 
     const onStyle = {
         width: '50px',

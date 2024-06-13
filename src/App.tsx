@@ -24,7 +24,7 @@ function App() {
             {/*<SelfControlledOnOff/>*/}
             <OnOff status={onOffStatus} setOnOffStatus={setOnOffStatus}/>
             {/*<SelfControlledAccordion title={'Self-Controlled Accordion'}/>*/}
-            {/*<SelfControlledRating value={3}/>*/}
+            {/*<SelfControlledRating onChange={() => {}}/>*/}
             <Rating value={ratingValue} setRatingValue={setRatingValue}/>
             <Accordion title={"First Accordion"} collapsed={collapsed} onChange={setCollapsed}/>
         </div>
