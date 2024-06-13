@@ -6,6 +6,7 @@ import React, {useState} from "react";
 
 //👇 This default export determines where your story goes in the story list
 export default {
+    title: 'Accordion',
     component: Accordion,
 };
 
@@ -19,7 +20,7 @@ export default {
 //     }
 // }
 
-const onChangeCallback = action('on change')
+const onChangeCallback = action('accordion mode change event fired')
 
 export const CollapsedAccordion = () => {
     return (
@@ -28,11 +29,11 @@ export const CollapsedAccordion = () => {
                    onChange={onChangeCallback}/>
     )
 }
-export const OpenedAccordion = () => {
+export const UncollapsedAccordion = () => {
     return (
         <Accordion title={"First Accordion"}
                    collapsed={false}
-                   onChange={() => {}}/>
+                   onChange={onChangeCallback}/>
     )
 }
 

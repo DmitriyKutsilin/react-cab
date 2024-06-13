@@ -3,7 +3,7 @@ import {RatingValueType} from "../../App";
 
 type RatingProps = {
     value: RatingValueType
-    onClick: (value: RatingValueType) => void
+    setRatingValue: (value: RatingValueType) => void
 }
 
 type StarProps = {
@@ -11,14 +11,14 @@ type StarProps = {
     onClick: () => void
 }
 
-export const Rating = ({value, onClick}: RatingProps) => {
+export const Rating = ({value, setRatingValue}: RatingProps) => {
     return (
         <div>
-            <Star selected={value > 0} onClick={() => onClick(1)}/>
-            <Star selected={value > 1} onClick={() => onClick(2)}/>
-            <Star selected={value > 2} onClick={() => onClick(3)}/>
-            <Star selected={value > 3} onClick={() => onClick(4)}/>
-            <Star selected={value > 4} onClick={() => onClick(5)}/>
+            <Star selected={value > 0} onClick={() => setRatingValue(1)}/>
+            <Star selected={value > 1} onClick={() => setRatingValue(2)}/>
+            <Star selected={value > 2} onClick={() => setRatingValue(3)}/>
+            <Star selected={value > 3} onClick={() => setRatingValue(4)}/>
+            <Star selected={value > 4} onClick={() => setRatingValue(5)}/>
         </div>
     )
 }

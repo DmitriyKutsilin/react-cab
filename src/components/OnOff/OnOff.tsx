@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import {useState} from "react";
 
 type Props = {
     status: boolean
