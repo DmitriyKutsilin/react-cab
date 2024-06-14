@@ -38,5 +38,4 @@ const PageTitle = ({title}: PageTitleProps) => {
 }
 
 
-
 export default App;
