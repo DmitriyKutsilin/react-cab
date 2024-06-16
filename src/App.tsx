@@ -6,6 +6,7 @@ import {OnOff} from "./components/OnOff/OnOff";
 import {SelfControlledAccordion} from "./components/SelfControlledAccordion/SelfControlledAccordion";
 import {SelfControlledRating} from "./components/SelfControlledRating/SelfControlledRating";
 import {SelfControlledOnOff} from "./components/SelfControlledOnOff/SelfControlledOnOff";
+import {Select} from "./components/Select/Select";
 
 type PageTitleProps = {
     title: string
@@ -18,6 +19,7 @@ function App() {
     const [collapsed, setCollapsed] = useState<boolean>(false)
     const [onOffStatus, setOnOffStatus] = useState<boolean>(false)
 
+
     return (
         <div className={'App'}>
             <PageTitle title={"App Page"}/>
@@ -26,7 +28,8 @@ function App() {
             {/*<SelfControlledAccordion title={'Self-Controlled Accordion'}/>*/}
             {/*<SelfControlledRating onChange={() => {}}/>*/}
             <Rating value={ratingValue} setRatingValue={setRatingValue}/>
-            <Accordion title={"First Accordion"} collapsed={collapsed} onChange={setCollapsed}/>
+            {/*<Accordion title={"First Accordion"} collapsed={collapsed} onChange={setCollapsed}/>*/}
+            {/*<Select value={} onChange={} items={}/>*/}
         </div>
     );
 }
